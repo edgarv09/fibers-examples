@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'irb'
+require 'irbtools'
+require "fiber_scheduler"
+require "httparty"
+require "open-uri"
+require "redis"
+require "sequel"
+require 'sqlite3'
+
+require_relative File.join(File.dirname(File.expand_path(__dir__)), 'config/application')
+
+def reload!
+  puts Application.load_libs
+end
+
+IRB.start

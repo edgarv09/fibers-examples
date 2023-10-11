@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgres
+  port: 26257
+  pool: 10
+  timeout: 5000
+
+development:
+  <<: *default
+  user: root
+  host: localhost
+  requiressl: false
+  database: core_development
